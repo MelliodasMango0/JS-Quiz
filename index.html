@@ -6,8 +6,29 @@
     <title>Document</title>
 </head>
 <body>
-    <button>Option A</button>
-    <button>Option B</B></button>
-    <button>Option C</button>
+    <h1>Web Quiz</h1>
+
+    <h2>How should you Not refer to Javascript?</h2>
+
+    <button onclick="check(this)">JS</button>
+    <button onclick="check(this)">VanillaJS</B></button>
+    <button onclick="check(this)" class="correct">Java</button>
+
+    <h2>What does the C in CSS stand for?</h2>
+
+    <button onclick="check(this)" class="correct">Cascading</button>
+    <button onclick="check(this)">Cat</B></button>
+    <button onclick="check(this)">Compounding</button>
+
+    <script>
+        function check(button){
+            if (button.classList.contains("correct")) {
+                button.style.background = "green";
+            } else {
+                button.style.background = "red";
+            }
+        }
+
+    </script>
 </body>
 </html>
