@@ -3,29 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            color: indigo;
+        }
+
+        button{
+            background: ghostwhite;
+            border: none;
+            color: inherit;
+            padding: 8px 16px;
+            transition: 0.3s;
+        }
+        button:hover{
+            background: lavender;
+            cursor: pointer;
+            padding: 8px 24px;
+        }
+        button.clicked.correct{
+            background: turquoise;
+            color: indigo;
+        }
+        button.clicked {
+            background: deeppink;
+            color: white;
+        }
+
+        .progress-bar {
+            transition: 10s;
+            border-color: indigo; 
+            border-radius: 30px;
+        }
+
+        .empty {
+            background: white;
+            padding: 0px;
+        }
+
+        .full {
+            background: greenyellow;
+            padding-right: 100%;
+        }
+
+    </style>
 </head>
 <body>
     <h1>Web Quiz</h1>
 
-    <h2>How should you Not refer to Javascript?</h2>
+    <div class="question">
+        <h2>How should you Not refer to Javascript?</h2>
 
-    <button onclick="check(this)">JS</button>
-    <button onclick="check(this)">VanillaJS</B></button>
-    <button onclick="check(this)" class="correct">Java</button>
+        <button onclick="check(this)">JS</button>
+        <button onclick="check(this)">VanillaJS</B></button>
+        <button onclick="check(this)" class="correct">Java</button>
+    <div>
+    
+    <div class="question">
+        <h2>What does the C in CSS stand for?</h2>
 
-    <h2>What does the C in CSS stand for?</h2>
-
-    <button onclick="check(this)" class="correct">Cascading</button>
-    <button onclick="check(this)">Cat</B></button>
-    <button onclick="check(this)">Compounding</button>
+        <button onclick="check(this)" class="correct">Cascading</button>
+        <button onclick="check(this)">Cat</B></button>
+        <button onclick="check(this)">Compounding</button>
+    </div>
+    
+    <h1>Fake Progress Bar</h1>
+    <div style="background-color: red;">
+        <div class="progress-bar empty"></div>
+        <button onclick="this">Start</button>
+    </div>
 
     <script>
         function check(button){
-            if (button.classList.contains("correct")) {
-                button.style.background = "green";
-            } else {
-                button.style.background = "red";
+            button.classList.add("clicked");
+
+            // if (button.classList.contains("correct")) {
+            //     button.style.background = "turquoise";
+            // } else {
+            //     button.style.background = "deeppink";
+            //     button.style.color = "white";
+            // }
+
+            // find current question
+            let question = button.closest('.question');
+
+            // find button elements within question(div)
+            let buttons = question.querySelectorAll('button');
+
+            for (let button of buttons){
+                button.disabled = true;
             }
         }
 
