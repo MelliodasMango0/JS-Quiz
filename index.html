@@ -1,112 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marvel Rivals - Higher or Lower</title>
-    <link rel="stylesheet" href="main.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-			background: url('images/WelcomeScreen.jpg') no-repeat center center fixed;
-			background-size: cover;
-            color: white;
-            text-align: center;
-        }
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-        }
-        #home-screen, #game-screen, #game-over-screen {
-            position: relative;
-            z-index: 1;
-        }
-        h1, p, button {
-			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-        }
-		h1 {
-			font-size: 3rem;
-			font-weight: bold;
-		}
-		p {
-			font-size: 1.5rem;
-		}
-        button {
-            background-color: yellow;
-            color: red;
-            padding: 15px 30px;
-            border: none;
-            font-size: 18px;
-            cursor: pointer;
-            transition: 0.3s;
-			font-weight: bold;
-			box-shadow: 0px 4px 10px rgba(0,0,0,0.5)
-        }
-        button:hover {
-            background-color: red;
-            color: yellow;
-        }
-		#game-over-screen {
-			display: none;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			width: 100%;
-			height: 100vh;
-			background: url('images/jeffCrying.png') no-repeat center center/cover;
-		}
-		.game-over-text {
-			background: rgba(0, 0, 0, 0.7);
-			padding: 20px;
-			border-radius: 10px;
-		}
-
-    </style>
-</head>
-<body>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
     <div class="overlay"></div>
     <div id="home-screen">
-        <h1>Marvel Rivals - Higher or Lower</h1>
-        <p>Guess which character is played more!</p>
-        <button id="play-button">Play</button>
+      <h1>Marvel Rivals - Higher or Lower</h1>
+      <p>Guess which character is played more!</p>
+      <button id="play-button">Play</button>
     </div>
 
-    <div id="game-screen" style="display: none;">
-        <h2>Who is played more?</h2>
-        <div class="character-container">
-            <div class="character-card">
-                <h3 id="current-character">Iron Man</h3>
-                <p>Play Rate: <span id="current-rate">15%</span></p>
-            </div>
-            <div id="vs">VS</div>
-            <div class="character-card">
-                <h3 id="next-character">???</h3>
-                <p>Play Rate: ???%</p>
-                <button id="higher-btn">Higher</button>
-                <button id="lower-btn">Lower</button>
-            </div>
+    <div id="game-screen" style="display: none">
+      <h2>Who is played more?</h2>
+      <div class="character-container">
+        <div class="character-card">
+          <h3 id="current-character">Iron Man</h3>
+          <p>Play Rate: <span id="current-rate">15%</span></p>
         </div>
-        <h3>Score: <span id="score">0</span></h3>
-        <button id="restart-btn" style="display: none;">Restart</button>
+        <div id="vs">VS</div>
+        <div class="character-card">
+          <h3 id="next-character">???</h3>
+          <p>Play Rate: ???%</p>
+          <button id="higher-btn">Higher</button>
+          <button id="lower-btn">Lower</button>
+        </div>
+      </div>
+      <h3>Score: <span id="score">0</span></h3>
+      <button id="restart-btn" style="display: none">Restart</button>
     </div>
 
-	<div id="game-over-screen">
-		<div class="game-over-text">
-			<h1>You scored:</h1>
-			<h2 id="final-score">0</h2>
-			<p>Better luck next time!</p>
-			<button id="play-again-btn">Play Again</button>
-		</div>
-	</div>
+    <div id="game-over-screen">
+      <div class="game-over-text">
+        <h1>You scored:</h1>
+        <h2 id="final-score">0</h2>
+        <p>Better luck next time!</p>
+        <button id="play-again-btn">Play Again</button>
+      </div>
+    </div>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
