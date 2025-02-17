@@ -99,8 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // API Fetch
 const API_KEY = 'dd9201c40ef9783960c5416f8adbf51ab7f9c4796b05497b53206efce184923c';
-const apiUrl = "https://mrapi.org/api/heroes";
-const proxyUrl = 'https://corsproxy.io/';
+const apiUrl = "https://mrapi.org/api/heroes-stats/pc?filter=competitiveSummary.name,competitiveSummary.pickRate";
+const proxyUrl = 'https://corsproxy.io/?url=';
 
 const requestOptions = {
   method: "GET",
