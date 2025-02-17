@@ -94,3 +94,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateGame();
 });
+
+
+// API Fetch
+const apiUrl = 'https://mrapi.org/api/heroes';
+//const proxyUrl = 'https://corsproxy.io/';
+
+const requestOptions = {
+  method: 'GET',
+  headers: {
+    'X-API-Key': `${API_KEY}`,
+  },
+};
+
+fetch(/*proxyUrl +*/ apiUrl, requestOptions)
+  .then(response => {
+    if (!response.ok) {
+      if (response.status === 404) {
+        throw new Error('Data not found');
+      } else if (response.status === 500) {
+        throw new Error('Server error');
+      } else {
+        throw new Error('Network response was not ok');
+      }
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
