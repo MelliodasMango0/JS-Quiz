@@ -21,18 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
   highScoreDisplay.innerText = highScore;
   let currentIndex, nextIndex;
 
-  let characters = [
-    { name: "Iron Man", playRate: 15, image: "images/IronMan.jpeg" },
-    { name: "Captain America", playRate: 10, image: "images/CaptainAmerica.jpeg" },
-    { name: "Black Widow", playRate: 5, image: "images/BlackWidow.jpeg" },
-    { name: "Thor", playRate: 20, image: "images/Thor.jpeg" },
-    { name: "Hulk", playRate: 25, image: "images/Hulk.jpeg" },
-    { name: "Spiderman", playRate: 30, image: "images/SpiderMan.jpeg" },
-    { name: "Black Panther", playRate: 35, image: "images/BlackPanther.jpeg" },
-    { name: "Doctor Strange", playRate: 40, image: "images/DrStrange.jpeg" },
-    { name: "Scarlet Witch", playRate: 50, image: "images/ScarletWitch.jpeg" }
-  ];
-
   let availableCharacters = [...characters]; // Clone the array to track available choices
 
   function getRandomIndex() {
@@ -83,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function showGameOverScreen() {
     gameScreen.style.display = "none";
     gameOverScreen.style.display = "flex";
-    gameOverImage.src = "images/Jeff.jpeg";
+    gameOverImage.src = "images/JefftheLandShark.jpeg";
     finalScoreDisplay.innerText = score;
   }
 
@@ -103,39 +91,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateGame();
 });
-
-/*
-//API Fetch
-const API_KEY = 'dd9201c40ef9783960c5416f8adbf51ab7f9c4796b05497b53206efce184923c';
-const apiUrl = "https://mrapi.org/api/heroes-stats/pc?filter=competitiveSummary.name,competitiveSummary.pickRate";
-const proxyUrl = 'https://thingproxy.freeboard.io/fetch/';
-console.log(apiUrl);
-console.log(proxyUrl + apiUrl);
-const requestOptions = {
-  method: "GET",
-  headers: {
-    "X-API-Key": `${API_KEY}`,
-		"Content-Type": "application/json",
-  },
-};
-
-fetch(proxyUrl + apiUrl, requestOptions)
-  .then((response) => {
-    if (!response.ok) {
-      if (response.status === 404) {
-        throw new Error("Data not found");
-      } else if (response.status === 500) {
-        throw new Error("Server error");
-      } else {
-        throw new Error("Network response was not ok");
-      }
-    }
-    return response.json();
-  })
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((error) => {
-    console.error("Error:", error);
-  });
-*/
