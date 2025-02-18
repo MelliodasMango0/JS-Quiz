@@ -104,16 +104,18 @@ document.addEventListener("DOMContentLoaded", () => {
   updateGame();
 });
 
-
+/*
 //API Fetch
 const API_KEY = 'dd9201c40ef9783960c5416f8adbf51ab7f9c4796b05497b53206efce184923c';
 const apiUrl = "https://mrapi.org/api/heroes-stats/pc?filter=competitiveSummary.name,competitiveSummary.pickRate";
-const proxyUrl = 'https://corsproxy.io/?url=';
-
+const proxyUrl = 'https://thingproxy.freeboard.io/fetch/';
+console.log(apiUrl);
+console.log(proxyUrl + apiUrl);
 const requestOptions = {
   method: "GET",
   headers: {
     "X-API-Key": `${API_KEY}`,
+		"Content-Type": "application/json",
   },
 };
 
@@ -136,3 +138,4 @@ fetch(proxyUrl + apiUrl, requestOptions)
   .catch((error) => {
     console.error("Error:", error);
   });
+*/
