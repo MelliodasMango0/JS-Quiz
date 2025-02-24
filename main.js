@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function showGameOverScreen() {
     gameScreen.style.display = "none";
     gameOverScreen.style.display = "flex";
-    gameOverImage.src = "images/JefftheLandShark.jpeg";
+    gameOverImage.src = "images/loss.jpeg";
     finalScoreDisplay.innerText = score;
   }
 
