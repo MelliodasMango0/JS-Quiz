@@ -142,10 +142,15 @@ body {
 }
 
 /* Character Containers */
-.character-container {
+#character-container {
   display: flex;
-  width: 100%;
+  width: 150%;
   height: 100%;
+}
+
+.moved {
+	transition: transform 1s;
+	transform: translateX(-33.3333%);
 }
 
 /* Each Character Side */
@@ -223,7 +228,7 @@ h3 {
 #high-score-display {
   position: absolute;
   bottom: 20px;
-  left: 20px;
+  left: 60px;
   text-align: left;
 }
 
@@ -256,4 +261,8 @@ h3 {
   background-color: red;
   color: yellow;
   transform: scale(1.1);
+}
+
+.hidden {
+	visibility: hidden;
 }

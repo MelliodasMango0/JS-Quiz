@@ -19,13 +19,15 @@
 
     <!-- Game Screen -->
     <div id="game-screen" style="display: none;">
-        <div class="character-container">
+        <div id="character-container">
             <!-- Left Side: Current Character -->
             <div class="character-card left-card">
                 <img id="current-image" src="images/IronMan.jpeg" alt="Iron Man">
                 <div class="overlay-text">
                     <h2 id="current-character">Iron Man</h2>
                     <p>Play Rate: <span id="current-rate">15%</span></p>
+										<button id="higher-btn-hidden" class="hidden">Higher</button>
+										<button id="lower-btn-hidden" class="hidden">Lower</button>
                 </div>
             </div>
 
@@ -42,6 +44,18 @@
                     <button id="lower-btn">Lower</button>
                 </div>
             </div>
+
+						<!-- Offscreen Right Side: Next Next Character -->
+            <div class="character-card next-card">
+							<img id="next-next-image" src="images/AdamWarlock.jpeg" alt="Adam Warlock">
+							<div class="overlay-text">
+								<h2 id="next-next-character">???</h2>
+								<p>Play Rate: ???%</p>
+								<button id="higher-btn-hidden" class="hidden">Higher</button>
+								<button id="lower-btn-hidden" class="hidden">Lower</button>
+							</div>
+						</div>
+					</div>
         </div>
 
         <div id="score-container">

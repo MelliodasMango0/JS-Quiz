@@ -9,17 +9,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentCharacter = document.getElementById("current-character");
   const currentPlayRate = document.getElementById("current-rate");
   const nextCharacter = document.getElementById("next-character");
+	const nextNextCharacter = document.getElementById("next-next-character");
   const scoreDisplay = document.getElementById("score");
   const highScoreDisplay = document.getElementById("high-score");
   const finalScoreDisplay = document.getElementById("final-score");
   const currentImage = document.getElementById("current-image");
   const nextImage = document.getElementById("next-image");
+	const nextNextImage = document.getElementById("next-next-image");
   const gameOverImage = document.getElementById("game-over-image");
+	const characterContainer = document.getElementById("character-container");
+	const versusText = document.getElementById("vs");
 
   let score = 0;
   let highScore = localStorage.getItem("highScore") || 0;
   highScoreDisplay.innerText = highScore;
-  let currentIndex, nextIndex;
+  let currentIndex, nextIndex, nextNextIndex;
 
   let availableCharacters = [...characters]; // Clone the array to track available choices
 
@@ -37,8 +41,15 @@ document.addEventListener("DOMContentLoaded", () => {
     gameScreen.style.display = "block";
     currentIndex = getRandomIndex();
     nextIndex = getRandomIndex();
+		nextNextIndex = getRandomIndex();
     updateGame();
   });
+
+	characterContainer.addEventListener("transitionend", () => {
+		characterContainer.classList.remove("moved");
+		versusText.classList = "";
+		updateGame();
+	});
 
   function updateGame() {
     currentCharacter.innerText = characters[currentIndex].name;
@@ -46,9 +57,15 @@ document.addEventListener("DOMContentLoaded", () => {
     currentImage.src = characters[currentIndex].image;
     nextCharacter.innerText = characters[nextIndex].name;
     nextImage.src = characters[nextIndex].image;
+		nextNextCharacter.innerText = characters[nextNextIndex].name;
+		nextNextImage.src = characters[nextNextIndex].image;
+		// higherButton.classList = "";
+		// lowerButton.classList = "";
   }
 
   function checkGuess(isHigher) {
+		// higherButton.classList.add("hidden");
+		// lowerButton.classList.add("hidden");
     if (
       (isHigher && characters[nextIndex].playRate > characters[currentIndex].playRate) ||
       (!isHigher && characters[nextIndex].playRate < characters[currentIndex].playRate)
@@ -61,8 +78,11 @@ document.addEventListener("DOMContentLoaded", () => {
         highScoreDisplay.innerText = highScore;
       }
       currentIndex = nextIndex;
-      nextIndex = getRandomIndex(); // Get a new unique character
-      updateGame();
+			nextIndex = nextNextIndex;
+      nextNextIndex = getRandomIndex(); // Get a new unique character
+			versusText.classList = "hidden";
+			characterContainer.classList.add("moved");
+      //updateGame();
     } else {
       showGameOverScreen();
     }
