@@ -1,81 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marvel Rivals - Higher or Lower</title>
-    <link rel="stylesheet" href="main.css" />
-		<script src="dataFetch.js"></script>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Marvel Rivals - Higher or Lower</title>
+	<link rel="stylesheet" href="main.css" />
+	<script src="dataFetch.js"></script>
 </head>
+
 <body>
-    <div class="overlay"></div>
+	<div class="overlay"></div>
 
-    <!-- Home Screen -->
-    <div id="home-screen">
-        <h1>Marvel Rivals - Higher or Lower</h1>
-        <p>Guess which character is played more!</p>
-        <button id="play-button">Play</button>
-    </div>
+	<!-- Home Screen -->
+	<div id="home-screen">
+		<h1>Marvel Rivals - Higher or Lower</h1>
+		<p>Guess which character is played more!</p>
+		<button id="play-button">Play</button>
+	</div>
 
-    <!-- Game Screen -->
-    <div id="game-screen" style="display: none;">
-        <div id="character-container">
-            <!-- Left Side: Current Character -->
-            <div class="character-card left-card">
-                <img id="current-image" src="images/IronMan.jpeg" alt="Iron Man">
-                <div class="overlay-text">
-                    <h2 id="current-character">Iron Man</h2>
-                    <p>Play Rate: <span id="current-rate">15%</span></p>
-										<button id="higher-btn-hidden" class="hidden">Higher</button>
-										<button id="lower-btn-hidden" class="hidden">Lower</button>
-                </div>
-            </div>
+	<!-- Game Screen -->
+	<div id="game-screen" style="display: none;">
+		<div id="character-container">
+			<!-- Left Side: Current Character -->
+			<div class="character-card left-card">
+				<img id="current-image" src="images/IronMan.jpeg" alt="Iron Man">
+				<div class="overlay-text">
+					<h2 id="current-character">Iron Man</h2>
+					<p>Play Rate: <span id="current-rate">15%</span></p>
+					<button id="higher-btn-hidden" class="hidden">Higher</button>
+					<button id="lower-btn-hidden" class="hidden">Lower</button>
+				</div>
+			</div>
 
-            <!-- VS in the middle -->
-            <div id="vs">VS</div>
+			<!-- VS in the middle -->
+			<div id="vs">VS</div>
 
-            <!-- Right Side: Next Character -->
-            <div class="character-card right-card">
-                <img id="next-image" src="images/CaptainAmerica.jpeg" alt="Captain America">
-                <div class="overlay-text">
-                    <h2 id="next-character">???</h2>
-                    <p>Play Rate: ???%</p>
-                    <button id="higher-btn">Higher</button>
-                    <button id="lower-btn">Lower</button>
-                </div>
-            </div>
+			<!-- Right Side: Next Character -->
+			<div class="character-card right-card">
+				<img id="next-image" src="images/CaptainAmerica.jpeg" alt="Captain America">
+				<div class="overlay-text">
+					<h2 id="next-character">???</h2>
+					<p>Play Rate: ???%</p>
+					<button id="higher-btn">Higher</button>
+					<button id="lower-btn">Lower</button>
+				</div>
+			</div>
 
-						<!-- Offscreen Right Side: Next Next Character -->
-            <div class="character-card next-card">
-							<img id="next-next-image" src="images/AdamWarlock.jpeg" alt="Adam Warlock">
-							<div class="overlay-text">
-								<h2 id="next-next-character">???</h2>
-								<p>Play Rate: ???%</p>
-								<button id="higher-btn-hidden" class="hidden">Higher</button>
-								<button id="lower-btn-hidden" class="hidden">Lower</button>
-							</div>
-						</div>
-					</div>
-        </div>
+			<!-- Offscreen Right Side: Next Next Character -->
+			<div class="character-card next-card">
+				<img id="next-next-image" src="images/AdamWarlock.jpeg" alt="Adam Warlock">
+				<div class="overlay-text">
+					<h2 id="next-next-character">???</h2>
+					<p>Play Rate: ???%</p>
+					<button id="higher-btn-hidden" class="hidden">Higher</button>
+					<button id="lower-btn-hidden" class="hidden">Lower</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
-        <div id="score-container">
-          <div id="high-score-display">High Score: <span id="high-score">0</span></div>
-          <div id="score-display">Score: <span id="score">0</span></div>
-      </div>
-            
-    </div>
+	<div id="score-container">
+		<div id="high-score-display">High Score: <span id="high-score">0</span></div>
+		<div id="score-display">Score: <span id="score">0</span></div>
+	</div>
 
-<!-- Game Over Screen -->
-<div id="game-over-screen" style="display: none;">
-  <img id="game-over-image" src="images/Jeff.jpeg" alt="Game Over">
-  <div class="game-over-text">
-      <h1>You Scored:</h1>
-      <h2 id="final-score">0</h2>
-      <p>Better luck next time!</p>
-      <button id="play-again-btn">Play Again</button>
-  </div>
-</div>
+	</div>
 
-    <script src="main.js"></script>
+	<!-- Game Over Screen -->
+	<div id="game-over-screen" style="display: none;">
+		<img id="game-over-image" src="images/Jeff.jpeg" alt="Game Over">
+		<div class="game-over-text">
+			<h1>You Scored:</h1>
+			<h2 id="final-score">0</h2>
+			<p>Better luck next time!</p>
+			<button id="play-again-btn">Play Again</button>
+		</div>
+	</div>
+
+	<script src="main.js"></script>
 </body>
+
 </html>
