@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const gameOverScreen = document.getElementById("game-over-screen");
   const higherButton = document.getElementById("higher-btn");
   const lowerButton = document.getElementById("lower-btn");
+	const buttonsContainer = document.getElementById("buttons-container");
   const playAgainButton = document.getElementById("play-again-btn");
   const currentCharacter = document.getElementById("current-character");
   const currentPlayRate = document.getElementById("current-rate");
@@ -46,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 	characterContainer.addEventListener("transitionend", () => {
+		characterContainer.classList.remove("win");
 		characterContainer.classList.remove("moved");
 		versusText.classList = "";
 		updateGame();
@@ -59,13 +61,10 @@ document.addEventListener("DOMContentLoaded", () => {
     nextImage.src = characters[nextIndex].image;
 		nextNextCharacter.innerText = characters[nextNextIndex].name;
 		nextNextImage.src = characters[nextNextIndex].image;
-		// higherButton.classList = "";
-		// lowerButton.classList = "";
+		buttonsContainer.classList = "";
   }
 
   function checkGuess(isHigher) {
-		// higherButton.classList.add("hidden");
-		// lowerButton.classList.add("hidden");
     if (
       (isHigher && characters[nextIndex].playRate > characters[currentIndex].playRate) ||
       (!isHigher && characters[nextIndex].playRate < characters[currentIndex].playRate)
@@ -80,7 +79,9 @@ document.addEventListener("DOMContentLoaded", () => {
       currentIndex = nextIndex;
 			nextIndex = nextNextIndex;
       nextNextIndex = getRandomIndex(); // Get a new unique character
-			versusText.classList = "hidden";
+			buttonsContainer.classList.add("hidden");
+			versusText.classList.add("hidden");
+			characterContainer.classList.add("win");
 			characterContainer.classList.add("moved");
       //updateGame();
     } else {

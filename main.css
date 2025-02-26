@@ -143,13 +143,17 @@ body {
 
 /* Character Containers */
 #character-container {
+	position: absolute;
   display: flex;
   width: 150%;
   height: 100%;
 }
 
-.moved {
+.win {
 	transition: transform 1s;
+}
+
+.moved {
 	transform: translateX(-33.3333%);
 }
 
@@ -172,7 +176,7 @@ body {
 /* Text Overlay - Without Black Rectangle */
 .overlay-text {
   position: absolute;
-  bottom: 10%;
+  bottom: 25%;
   left: 50%;
   transform: translateX(-50%);
   color: white;
@@ -240,16 +244,27 @@ h3 {
   text-align: right;
 }
 
+.hidden {
+	visibility: hidden;
+}
+
+#buttons-container {
+	position: absolute;
+	margin: .625rem 0;
+	bottom: 15%;
+	width: 50%;
+	left: 50%;
+}
 
 /* Buttons inside the next-character box */
-.overlay-text button {
+#buttons-container button {
   background-color: yellow;
   color: red;
   padding: 12px 25px;
   border: none;
   font-size: 18px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: scale 0.3s;
   font-weight: bold;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
   margin: 8px;
@@ -257,12 +272,8 @@ h3 {
   border-radius: 5px;
 }
 
-.overlay-text button:hover {
+#buttons-container button:hover {
   background-color: red;
   color: yellow;
   transform: scale(1.1);
-}
-
-.hidden {
-	visibility: hidden;
 }
